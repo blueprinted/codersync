@@ -8,12 +8,5 @@ return array(
         'shouji' => array(
             2,
         ),
-        'pc' => array(
-            7,
-        ),
-        'qq' => array(
-        ),
-        'srv' => array(
-        ),
     ),
 );
