@@ -7,15 +7,12 @@
 
 namespace Rsync\Controller;
 
-use Think\Controller;
+use Common\Controller\RsyncbaseController;
 
-class DeployController extends Controller
+class DeployController extends RsyncbaseController
 {
     protected function _initialize()
     {
-        if (!B('Admin\Behavior\AuthCheck')) {
-            $this->error('请先登录', U('Admin/Public/login'), 1, array('code'=>'need_login'));
-        }
     }
 
     /*上线流程列表*/

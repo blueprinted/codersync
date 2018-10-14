@@ -7,15 +7,12 @@
 
 namespace Rsync\Controller;
 
-use Think\Controller;
+use Common\Controller\RsyncbaseController;
 
-class IndexController extends Controller
+class IndexController extends RsyncbaseController
 {
     protected function _initialize()
     {
-        if (!B('Admin\Behavior\AuthCheck')) {
-            $this->error('请先登录', U('Admin/Public/login'), 1, array('code'=>'need_login'));
-        }
     }
 
     public function indexAction()
@@ -43,9 +40,9 @@ class IndexController extends Controller
         }
 
         $app = init_rsync_app_conf($app, $retinfo);
-				if ($app === false) {
-						$this->error('项目配置不正确, ' . implode(', ', $retinfo));
-				}
+        if ($app === false) {
+                $this->error('项目配置不正确, ' . implode(', ', $retinfo));
+        }
 
         if ($app['root_dir'] && empty($app['root_dir_test'])) {
             $istest = 0;
@@ -54,14 +51,14 @@ class IndexController extends Controller
         }
 
         //获取项目目录
-    		$app_root = $istest ? realpath($app['root_dir_test']) : realpath($app['root_dir']);
-    		if ($app_root === false) {
-    				if (($istest && strlen($app['root_dir_test']) > 0 && !mkdir_recursive($app['root_dir_test'], 0755))
-    						|| (!$istest && strlen($app['root_dir']) > 0 && !mkdir_recursive($app['root_dir'], 0755))) {
-    						$this->error("项目目录不存在且创建失败[".($istest?$app['root_dir_test']:$app['root_dir'])."]");
-    				}
-    				$app_root = $istest ? realpath($app['root_dir_test']) : realpath($app['root_dir']);
-    		}
+            $app_root = $istest ? realpath($app['root_dir_test']) : realpath($app['root_dir']);
+        if ($app_root === false) {
+            if (($istest && strlen($app['root_dir_test']) > 0 && !mkdir_recursive($app['root_dir_test'], 0755))
+                        || (!$istest && strlen($app['root_dir']) > 0 && !mkdir_recursive($app['root_dir'], 0755))) {
+                    $this->error("项目目录不存在且创建失败[".($istest?$app['root_dir_test']:$app['root_dir'])."]");
+            }
+                $app_root = $istest ? realpath($app['root_dir_test']) : realpath($app['root_dir']);
+        }
 
         $realdir = realpath($app_root.'/'.$dir);
         if (substr($realdir, 0, strlen($app_root)) != $app_root) {
