@@ -1,0 +1,14 @@
+@charset 'utf-8';
+
+html,body{font-size:16px}
+.head-cont{width:100%;height:100%}
+.logo{margin:0;padding:0 0 0 24px;display:block;float:left;}
+.uinfo {float:right;padding-right:24px;margin:0}
+#navigator{margin-bottom:0;float:left;background-color:#fff}
+#navigator>li>a{font-size:16px;padding:2px 1px;color:green}
+#apptable{margin-bottom:0}
+
+.toolpanel{padding:6px 0;background-color:#fff;}
+.noer{padding:5px 0}
+/*table内的label标签*/
+.table th label{vertical-align:middle}

@@ -1,0 +1,69 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('user/index')}">{:L('ADMIN_USER_INDEX')}</a></li>
+			<li><a href="{:U('user/add')}">{:L('ADMIN_USER_ADD')}</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th width="50">ID</th>
+					<th>{:L('USERNAME')}</th>
+					<th>{:L('LAST_LOGIN_IP')}</th>
+					<th>{:L('LAST_LOGIN_TIME')}</th>
+					<th style="width:120px">{:L('ROLE')}</th>
+					<th>{:L('STATUS')}</th>
+					<th width="100">{:L('ACTIONS')}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<php>$user_statuses=array("0"=>L('USER_STATUS_UNVERIFIED'),"1"=>L('USER_STATUS_ACTIVATED'),"2"=>L('USER_STATUS_BLOCKED'));</php>
+				<foreach name="users" item="vo">
+				<tr>
+					<td>{$vo.uid}</td>
+					<td>{$vo.username}</td>
+					<td>{$vo.last_ip}</td>
+					<td>
+						<if condition="$vo['last_time'] eq 0">
+							{:L('USER_HAVENOT_LOGIN')}
+						<else />
+							{:date('Y-m-d H:i:s', $vo['last_time'])}
+						</if>
+					</td>
+					<td>
+					<if condition="$vo['uid'] eq get_super_uid()">
+						super_admin
+					<else/>
+						{:implode(',',$vo['rolenames'])}
+					</if>
+					</td>
+					<td>{$user_statuses[$vo['status']]}</td>
+					<td>
+						<if condition="$vo['uid'] eq 1">
+						<font color="#cccccc">{:L('EDIT')}</font> | <font color="#cccccc">{:L('DELETE')}</font> |
+							<if condition="$vo['status'] eq 2">
+								<font color="#cccccc">{:L('BLOCK_USER')}</font>
+							<else />
+								<font color="#cccccc">{:L('ACTIVATE_USER')}</font>
+							</if>
+						<else />
+							<a href='{:U("user/edit",array("uid"=>$vo["uid"]))}'>{:L('EDIT')}</a> | 
+							<a class="js-ajax-delete" href="{:U('user/delete',array('uid'=>$vo['uid']))}">{:L('DELETE')}</a> | 
+							<if condition="$vo['status'] eq 1">
+								<a href="{:U('user/ban',array('uid'=>$vo['uid']))}" class="js-ajax-dialog-btn" data-msg="{:L('BLOCK_USER_CONFIRM_MESSAGE')}">{:L('BLOCK_USER')}</a>
+							<else />
+								<a href="{:U('user/cancelban',array('uid'=>$vo['uid']))}" class="js-ajax-dialog-btn" data-msg="{:L('ACTIVATE_USER_CONFIRM_MESSAGE')}">{:L('ACTIVATE_USER')}</a>
+							</if>
+						</if>
+					</td>
+				</tr>
+				</foreach>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+	<script src="__PUBLIC__/js/admin_common.js"></script>
+</body>
+</html>

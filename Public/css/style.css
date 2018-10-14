@@ -1,0 +1,110 @@
+@charset 'utf-8';
+
+/* 通用样式 */
+
+*{word-wrap:break-word}
+*, body, div, span, ul, li, table, tbody, th, tr, td, img, a, input, select, option, p {margin:0;padding:0}
+html, body {width:100%;margin:0 auto;text-align:left;padding:0;-webkit-text-size-adjust:none;font:12px/1.5 微软雅黑,宋体,serif,Arial,Verdana,Geneva,Helvetica,sans-serif;color:#3f3f3f;/*background-color:#f9f9f9*/}
+textarea{resize:none}
+*,body,ul,ol,li,dl,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset{margin:0;padding:0}
+table{empty-cells:show;border-collapse:collapse}
+caption,th{text-align:left;font-weight:400}
+ul li,.xl li{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:1em}
+em,cite,i{font-style:normal}
+a{color:#333;text-decoration:none}
+a:hover{text-decoration:underline}
+a img{border:none}
+label{cursor:pointer}
+img { border:none; }
+*:focus{outline:0}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+.cl:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.cl{zoom:1}
+
+.fl{float:left}
+.fr{float:right}
+.rowLast{margin-right:0}
+.colLast{margin-bottom:0}
+.cutstr{vertical-align:text-bottom;word-wrap:normal;white-space:nowrap;overflow:hidden;-o-text-overflow:ellipsis;/* Opera */ text-overflow:ellipsis;/* IE, Safari (WebKit) */}
+
+#ajaxwaitid{display:none;position:absolute;right:0;top:0;z-index:1;padding:0 5px;background:#D00;color:#FFF}
+.wrapper{width:100%;margin:0 auto;zoom:1}
+.mainWrap{width:100%;margin:0 auto;padding:0;overflow:hidden}
+
+/* topNav */
+.topNav{background-color:#262626}
+.topNavCont{width:980px;margin:0 auto}
+.topNavUl{float:left;list-style:none;overflow:hidden}
+	.topNavUl li {font-size:12px;float:left;cursor:pointer;padding:6px 10px;color:rgb(111,111,111);font-family: Tahoma, Arial}
+.userinfo_ul{display:inline;list-style:none;overflow:hidden}
+	.userinfo_ul li {font-size:12px;float:left;padding:6px 10px;color:#ccc;font-family:Tahoma, Arial}
+	.userinfo_ul li a{color:#ccc}
+
+/* header */
+.header {width:100%;padding:16px 0 16px 0;background-color:#27AE60/*208d4e*/;color:#fff;border-bottom:1px solid #ececec}
+.header a {color:#fff;}
+
+/* footer */
+.footer{width:100%;padding:18px 0 20px 0;color:#fff;background-color:#34393C;font-size:14px;text-align:center}
+	.footer a{color:#fff}
+
+/* sidebar */
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 32px;
+    background: rgba(39,174,96,0.6);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 2px;
+    z-index: 1;
+    display: none;
+}
+#back-to-top i {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+#back-to-top:hover{background:#27AE60}
+
+/* pagination */
+nav.pagination{margin:10px 0}
+nav.pagination > div > a, nav.pagination > div > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+nav.pagination > div > a:first-child, nav.pagination > div > span:first-child  {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+nav.pagination > div > a:last-child, nav.pagination > div > span:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+nav.pagination > div > a.current, nav.pagination > div > span.current {
+	color: #999;
+}
+
+/*color*/
+.gray{color:gray}
+.gray2{color:#ccc}
+.green{color:green}
+.green2{color:#2c9f42}
+.red{color:red}
+.yellow{color:yellow}
+.yellow2{color:#cccc66}
+.pink{color:pink}
+.blue{color:blue}
+
+/*增加bootstrap*/
+.table > tfoot > tr:first-child > th {border-top:2px solid #ddd}
+.input-checker {float:left;padding-left:10px}

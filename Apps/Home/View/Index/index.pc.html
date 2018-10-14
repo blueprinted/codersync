@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>输入法服务端工具集合</title>
+<meta http-equiv="X-UA-Compatible" content="IE=10;chrome=1;" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap3.3.5/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/rsync/style.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/ui-dialog.css" />
+<script type="text/javascript">var URL_MODEL=<{:C('URL_MODEL')}>;</script>
+<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap3.3.5/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/artdialog/dialog-plus.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/ie10-viewport-bug-workaround.js"></script>
+<style type="text/css">
+.site-notice {
+    padding: 5px 0;
+    text-align: center;
+    background-color: #208d4e;
+}
+.site-header {
+    position: relative;
+    text-align: center;
+    background-color: #27AE60;
+    color: #fff;
+    margin-bottom: 0;
+}
+.site-nav {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    z-index: 1100;
+}
+.site-nav a {
+    color: #eee;
+}
+.site-nav a:hover {
+    color: #fff;
+}
+.site-header span {
+    font-size: 14px;
+}
+.app-container {
+	margin: 0;
+}
+.apps-list-container {
+	padding: 18px 0;
+}
+.apps .app-description {
+    color: #777;
+}
+.app-container h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.app-container .app-description {
+    color: #777;
+}
+.app-container .app-extra-info {
+    font-size: 12px;
+    color: #aaa;
+}
+</style>
+</head>
+<body>
+<header class="site-header jumbotron">
+	<div class="site-nav">
+		<!--<a href="#">日志</a>&nbsp;<span>/</span>&nbsp;<a href="#about">关于</a>-->
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Toolsets</h1>
+				<p>输入法服务端发布系统<br><span class="apps-amount"><strong></strong></span></p>
+			</div>
+		</div>
+	</div>
+</header>
+<main class="apps-list-container" id="all-apps">
+	<div class="container">
+		<div class="list-group app-container">
+			<a href="<{:U('Rsync/Index/index', array('group'=>'pc'))}>" class="app list-group-item" data-library-name="rsync">
+				<div class="row">
+					<div class="col-md-4"><h4 class="app-name">SVN/GIT+RSYNC代码发布系统[PC组]</h4></div>
+					<div class="col-md-8 hidden-xs"><p class="app-description">代码管理及发布工具</p></div>
+					<div class="app-extra-info col-md-8 col-md-offset-4 col-xs-12"><span></span></div>
+				</div>
+			</a>
+			<a href="<{:U('Rsync/Index/index', array('group'=>'qq'))}>" class="app list-group-item" data-library-name="rsync">
+				<div class="row">
+					<div class="col-md-4"><h4 class="app-name">SVN/GIT+RSYNC代码发布系统[QQ组]</h4></div>
+					<div class="col-md-8 hidden-xs"><p class="app-description">代码管理及发布工具</p></div>
+					<div class="app-extra-info col-md-8 col-md-offset-4 col-xs-12"><span></span></div>
+				</div>
+			</a>
+			<a href="<{:U('Rsync/Index/index', array('group'=>'srv'))}>" class="app list-group-item" data-library-name="rsync">
+				<div class="row">
+					<div class="col-md-4"><h4 class="app-name">SVN/GIT+RSYNC代码发布系统[SERVER]</h4></div>
+					<div class="col-md-8 hidden-xs"><p class="app-description">代码管理及发布工具</p></div>
+					<div class="app-extra-info col-md-8 col-md-offset-4 col-xs-12"><span></span></div>
+				</div>
+			</a>
+      <a href="<{:U('Rsync/Index/index', array('group'=>'shouji'))}>" class="app list-group-item" data-library-name="rsync">
+				<div class="row">
+					<div class="col-md-4"><h4 class="app-name">SVN/GIT+RSYNC代码发布系统[SHOUJI]</h4></div>
+					<div class="col-md-8 hidden-xs"><p class="app-description">代码管理及发布工具</p></div>
+					<div class="app-extra-info col-md-8 col-md-offset-4 col-xs-12"><span></span></div>
+				</div>
+			</a>
+		</div>
+	</div>
+</main>
+<footer id="footer" class="footer">
+	<div class="copy-right"><span>Developed by shouji &copy;<{:date('Y')}></span></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+api/android/skins/cache/
+api/android/skins/search_10w/
+api/android/skins/search_compat/
+api/expression/android/scws_data/
+api/interface/cache/
+api/interface/scws_data_expr/
+api/iphone/cron/
+api/iphone/dict/cache/
+api/iphone/dict/scws_dict/
+api/iphone/dict/scws_lbs/
+api/iphone/skins/cache/
+api/iphone/skins/search_10w/
+api/iphone/skins/search_compat/

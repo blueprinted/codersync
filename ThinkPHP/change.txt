@@ -1,0 +1,5 @@
+更改了如下的文件：
+[]ThinkPHP/Library/Think/Controller.class.php
+[]ThinkPHP/Conf/convention.php
+[]ThinkPHP/Tpl/page_trace.tpl
+[]ThinkPHP/Library/Think/Session/Driver/FIler.class.php[增加自定义文件存储驱动]
